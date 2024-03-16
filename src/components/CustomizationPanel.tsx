@@ -19,53 +19,132 @@ const CustomizationPanel: React.FC = () => {
 	} = useConfigurator();
 
 	return (
-		<div>
+		<div className='bg-violet-300/60 p-2 rounded-md'>
 			<label>
-				Shape:
-				<select
-					value={shape}
-					onChange={(e) => setShape(e.target.value as ShapeOption)}
-				>
-					<option value='Round'>Round</option>
-					<option value='Oval'>Oval</option>
-					<option value='Emerald'>Emerald</option>
-					<option value='Asscher'>Asscher</option>
-				</select>
+				Stone Shape:&nbsp;
+				<div className='flex space-x-2'>
+					<button onClick={() => setShape('Round' as ShapeOption)}>
+						<img
+							src='round.png'
+							alt='Round'
+							className={`h-12 w-12 ${
+								shape === 'Round' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+					<button onClick={() => setShape('Oval' as ShapeOption)}>
+						<img
+							src='oval.png'
+							alt='Oval'
+							className={`h-12 w-12 ${
+								shape === 'Oval' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+					<button onClick={() => setShape('Emerald' as ShapeOption)}>
+						<img
+							src='emerald.png'
+							alt='Emerald'
+							className={`h-12 w-12 ${
+								shape === 'Emerald' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+					<button onClick={() => setShape('Asscher' as ShapeOption)}>
+						<img
+							src='asscher.png'
+							alt='Asscher'
+							className={`h-12 w-12 ${
+								shape === 'Asscher' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+				</div>
 			</label>
 			<br />
 			<label>
-				Band Color:
-				<select
-					value={bandColor}
-					onChange={(e) => setBandColor(e.target.value as BandOption)}
-				>
-					<option value='gold'>Gold</option>
-					<option value='rose_gold'>Rose Gold</option>
-					<option value='white_gold'>White Gold</option>
-				</select>
+				Band Color:&nbsp;
+				<div className='flex space-x-4'>
+					<button onClick={() => setBandColor('gold' as BandOption)}>
+						<img
+							src='gold.jpeg'
+							alt='Gold'
+							className={`h-10 w-10 ${
+								bandColor === 'gold' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+					<button onClick={() => setBandColor('rose_gold' as BandOption)}>
+						<img
+							src='rose-gold.jpeg'
+							alt='Rose Gold'
+							className={`h-10 w-10 ${
+								bandColor === 'rose_gold' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+
+					<button onClick={() => setBandColor('white_gold' as BandOption)}>
+						<img
+							src='white-gold.jpeg'
+							alt='White Gold'
+							className={`h-10 w-10 ${
+								bandColor === 'white_gold' ? 'ring-2 ring-black' : ''
+							}`}
+						/>
+					</button>
+				</div>
 			</label>
 			<br />
 			<label>
-				Stone Color:
-				<select
-					value={stoneColor}
-					onChange={(e) => setStoneColor(e.target.value as StoneOption)}
-				>
-					<option value='diamond_pure'>Diamond</option>
-					<option value='diamond_pink'>Pink Diamond</option>
-					<option value='diamond_yellow'>Yellow Diamond</option>
-					<option value='diamond_blue'>Blue Diamond</option>
-					<option value='diamond_black'>Black Diamond</option>
-				</select>
+				Stone Color:&nbsp;
+				<div className='flex space-x-2'>
+					<button
+						className={`h-8 w-8 rounded-full ${
+							stoneColor === 'diamond_pure' ? 'ring-2 ring-black' : ''
+						}`}
+						style={{ backgroundColor: '#ffffff' }}
+						onClick={() => setStoneColor('diamond_pure' as StoneOption)}
+					></button>
+					<button
+						className={`h-8 w-8 rounded-full ${
+							stoneColor === 'diamond_pink' ? 'ring-2 ring-black' : ''
+						}`}
+						style={{ backgroundColor: '#ff69b4' }}
+						onClick={() => setStoneColor('diamond_pink' as StoneOption)}
+					></button>
+					<button
+						className={`h-8 w-8 rounded-full ${
+							stoneColor === 'diamond_yellow' ? 'ring-2 ring-black' : ''
+						}`}
+						style={{ backgroundColor: '#ffff00' }}
+						onClick={() => setStoneColor('diamond_yellow' as StoneOption)}
+					></button>
+					<button
+						className={`h-8 w-8 rounded-full ${
+							stoneColor === 'diamond_blue' ? 'ring-2 ring-black' : ''
+						}`}
+						style={{ backgroundColor: '#0000ff' }}
+						onClick={() => setStoneColor('diamond_blue' as StoneOption)}
+					></button>
+					<button
+						className={`h-8 w-8 rounded-full ${
+							stoneColor === 'diamond_black' ? 'ring-2 ring-black' : ''
+						}`}
+						style={{ backgroundColor: '#000000' }}
+						onClick={() => setStoneColor('diamond_black' as StoneOption)}
+					></button>
+				</div>
 			</label>
 			<br />
 			<label>
-				Has Halo:
+				Add Hidden Halo?&nbsp;
 				<input
 					type='checkbox'
 					checked={hasHalo}
 					onChange={(e) => setHasHalo(e.target.checked)}
 				/>
+				&nbsp;Yes
 			</label>
 		</div>
 	);

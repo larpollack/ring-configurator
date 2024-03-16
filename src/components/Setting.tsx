@@ -11,7 +11,7 @@ import { Suspense } from 'react';
 const Setting = () => {
 	return (
 		<mesh>
-			<Stage environment='forest' intensity={0.2} castShadow={true}></Stage>
+			<Stage environment='forest' intensity={0.7} castShadow={true}></Stage>
 			<Suspense fallback={null}>
 				<Ring />
 			</Suspense>
