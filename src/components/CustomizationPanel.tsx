@@ -16,6 +16,10 @@ const CustomizationPanel: React.FC = () => {
 		setStoneColor,
 		hasHalo,
 		setHasHalo,
+		hasAccents,
+		setHasAccents,
+		hasSideStones,
+		setHasSideStones,
 	} = useConfigurator();
 
 	return (
@@ -143,6 +147,26 @@ const CustomizationPanel: React.FC = () => {
 					type='checkbox'
 					checked={hasHalo}
 					onChange={(e) => setHasHalo(e.target.checked)}
+				/>
+				&nbsp;Yes
+			</label>
+			<br />
+			<label>
+				Add Side Stones?&nbsp;
+				<input
+					type='checkbox'
+					checked={hasSideStones}
+					onChange={(e) => setHasSideStones(e.target.checked)}
+				/>
+				&nbsp;Yes
+			</label>
+			<br />
+			<label>
+				Add Diamond Accents?&nbsp;
+				<input
+					type='checkbox'
+					checked={hasAccents}
+					onChange={(e) => setHasAccents(e.target.checked)}
 				/>
 				&nbsp;Yes
 			</label>

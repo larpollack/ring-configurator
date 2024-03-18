@@ -138,6 +138,25 @@ type GLTFResult = GLTF & {
 		Asscher_stone_black_rose_gold: THREE.Mesh;
 		Asscher_halo_band_rose_gold: THREE.Mesh;
 		Asscher_halo_stones_rose_gold: THREE.Mesh;
+		Diamond_accents: THREE.Mesh;
+		Trillion_gold: THREE.Mesh;
+		Side_stone_base_gold: THREE.Mesh;
+		Side_stone_prongs_gold: THREE.Mesh;
+		Side_stones_prong3_gold: THREE.Mesh;
+		Side_stones_setting3_gold: THREE.Mesh;
+		Side_stones_settings_gold: THREE.Mesh;
+		Trillion_rose_gold: THREE.Mesh;
+		Side_stone_base_rose_gold: THREE.Mesh;
+		Side_stone_prongs_rose_gold: THREE.Mesh;
+		Side_stones_prong3_rose_gold: THREE.Mesh;
+		Side_stones_setting3_rose_gold: THREE.Mesh;
+		Side_stones_settings_rose_gold: THREE.Mesh;
+		Trillion_white_gold: THREE.Mesh;
+		Side_stone_base_white_gold: THREE.Mesh;
+		Side_stone_prongs_white_gold: THREE.Mesh;
+		Side_stones_prong3_white_gold: THREE.Mesh;
+		Side_stones_setting3_white_gold: THREE.Mesh;
+		Side_stones_settings_white_gold: THREE.Mesh;
 	};
 	materials: {
 		floor: THREE.MeshStandardMaterial;
@@ -160,7 +179,8 @@ type ContextType = Record<
 
 export function Ring(props: JSX.IntrinsicElements['group']) {
 	const { nodes, materials } = useGLTF('./models/ring.gltf') as GLTFResult;
-	const { shape, bandColor, hasHalo, stoneColor } = useConfigurator();
+	const { shape, bandColor, hasHalo, stoneColor, hasAccents, hasSideStones } =
+		useConfigurator();
 
 	return (
 		<group {...props} dispose={null}>
@@ -1291,6 +1311,157 @@ export function Ring(props: JSX.IntrinsicElements['group']) {
 									/>
 								</>
 							)}
+						</>
+					)}
+				</>
+			)}
+			{hasAccents && (
+				<mesh
+					geometry={nodes.Diamond_accents.geometry}
+					material={materials.diamond_pure}
+					position={[-0.569, 2.427, -0.013]}
+					rotation={[0.103, -0.211, 0.452]}
+					scale={[0.116, 0.114, 0.115]}
+				/>
+			)}
+			{hasSideStones && (
+				<>
+					{bandColor === 'gold' && (
+						<>
+							<mesh
+								geometry={nodes.Trillion_gold.geometry}
+								material={materials.diamond_pure}
+								position={[-0.505, 2.538, -0.003]}
+								rotation={[1.331, -1.165, 1.4]}
+								scale={0.424}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_base_gold.geometry}
+								material={materials.gold}
+								position={[-0.487, 2.441, -0.012]}
+								rotation={[1.178, -1.174, -2]}
+								scale={[0.098, 0.021, 0.149]}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_prongs_gold.geometry}
+								material={materials.gold}
+								position={[-0.571, 2.53, -0.144]}
+								scale={-0.02}
+							>
+								<mesh
+									geometry={nodes.Side_stones_prong3_gold.geometry}
+									material={materials.gold}
+									position={[-10.771, -4.54, -7.126]}
+									rotation={[1.594, -1.001, 1.351]}
+								>
+									<mesh
+										geometry={nodes.Side_stones_setting3_gold.geometry}
+										material={materials.gold}
+										position={[-0.441, 1.996, 0.352]}
+										rotation={[0.02, -0.134, 0.243]}
+										scale={[-0.882, -1.089, -1.615]}
+									/>
+								</mesh>
+								<mesh
+									geometry={nodes.Side_stones_settings_gold.geometry}
+									material={materials.gold}
+									position={[-0.441, 1.996, 0.352]}
+									rotation={[0.02, -0.134, 0.243]}
+									scale={[-0.882, -1.089, -1.615]}
+								/>
+							</mesh>
+						</>
+					)}
+					{bandColor === 'rose_gold' && (
+						<>
+							<mesh
+								geometry={nodes.Trillion_rose_gold.geometry}
+								material={materials.diamond_pure}
+								position={[-0.505, 2.538, -0.003]}
+								rotation={[1.331, -1.165, 1.4]}
+								scale={0.424}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_base_rose_gold.geometry}
+								material={materials.rose_gold}
+								position={[-0.487, 2.441, -0.012]}
+								rotation={[1.178, -1.174, -2]}
+								scale={[0.098, 0.021, 0.149]}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_prongs_rose_gold.geometry}
+								material={materials.rose_gold}
+								position={[-0.571, 2.53, -0.144]}
+								scale={-0.02}
+							>
+								<mesh
+									geometry={nodes.Side_stones_prong3_rose_gold.geometry}
+									material={materials.rose_gold}
+									position={[-10.771, -4.54, -7.126]}
+									rotation={[1.594, -1.001, 1.351]}
+								>
+									<mesh
+										geometry={nodes.Side_stones_setting3_rose_gold.geometry}
+										material={materials.rose_gold}
+										position={[-0.441, 1.996, 0.352]}
+										rotation={[0.02, -0.134, 0.243]}
+										scale={[-0.882, -1.089, -1.615]}
+									/>
+								</mesh>
+								<mesh
+									geometry={nodes.Side_stones_settings_rose_gold.geometry}
+									material={materials.rose_gold}
+									position={[-0.441, 1.996, 0.352]}
+									rotation={[0.02, -0.134, 0.243]}
+									scale={[-0.882, -1.089, -1.615]}
+								/>
+							</mesh>
+						</>
+					)}
+					{bandColor === 'white_gold' && (
+						<>
+							<mesh
+								geometry={nodes.Trillion_white_gold.geometry}
+								material={materials.diamond_pure}
+								position={[-0.505, 2.538, -0.003]}
+								rotation={[1.331, -1.165, 1.4]}
+								scale={0.424}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_base_white_gold.geometry}
+								material={materials.white_gold}
+								position={[-0.487, 2.441, -0.012]}
+								rotation={[1.178, -1.174, -2]}
+								scale={[0.098, 0.021, 0.149]}
+							/>
+							<mesh
+								geometry={nodes.Side_stone_prongs_white_gold.geometry}
+								material={materials.white_gold}
+								position={[-0.571, 2.53, -0.144]}
+								scale={-0.02}
+							>
+								<mesh
+									geometry={nodes.Side_stones_prong3_white_gold.geometry}
+									material={materials.white_gold}
+									position={[-10.771, -4.54, -7.126]}
+									rotation={[1.594, -1.001, 1.351]}
+								>
+									<mesh
+										geometry={nodes.Side_stones_setting3_white_gold.geometry}
+										material={materials.white_gold}
+										position={[-0.441, 1.996, 0.352]}
+										rotation={[0.02, -0.134, 0.243]}
+										scale={[-0.882, -1.089, -1.615]}
+									/>
+								</mesh>
+								<mesh
+									geometry={nodes.Side_stones_settings_white_gold.geometry}
+									material={materials.white_gold}
+									position={[-0.441, 1.996, 0.352]}
+									rotation={[0.02, -0.134, 0.243]}
+									scale={[-0.882, -1.089, -1.615]}
+								/>
+							</mesh>
 						</>
 					)}
 				</>

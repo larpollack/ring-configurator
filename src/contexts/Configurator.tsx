@@ -20,6 +20,10 @@ interface ConfiguratorContextType {
 	setStoneColor: (stoneColor: StoneOption) => void;
 	hasHalo: boolean;
 	setHasHalo: (hasHalo: boolean) => void;
+	hasSideStones: boolean;
+	setHasSideStones: (hasHalo: boolean) => void;
+	hasAccents: boolean;
+	setHasAccents: (hasHalo: boolean) => void;
 }
 
 const ConfiguratorContext = createContext<ConfiguratorContextType | undefined>(
@@ -31,6 +35,8 @@ const defaultSettings = {
 	bandColor: 'gold' as BandOption,
 	stoneColor: 'diamond_pure' as StoneOption,
 	hasHalo: false,
+	hasSideStones: false,
+	hasAccents: false,
 };
 
 interface ConfiguratorProviderProps {
@@ -48,6 +54,12 @@ const ConfiguratorProvider: React.FC<ConfiguratorProviderProps> = ({
 		defaultSettings.stoneColor
 	);
 	const [hasHalo, setHasHalo] = useState<boolean>(defaultSettings.hasHalo);
+	const [hasSideStones, setHasSideStones] = useState<boolean>(
+		defaultSettings.hasSideStones
+	);
+	const [hasAccents, setHasAccents] = useState<boolean>(
+		defaultSettings.hasAccents
+	);
 
 	const value = {
 		shape,
@@ -58,6 +70,10 @@ const ConfiguratorProvider: React.FC<ConfiguratorProviderProps> = ({
 		setStoneColor,
 		hasHalo,
 		setHasHalo,
+		hasSideStones,
+		setHasSideStones,
+		hasAccents,
+		setHasAccents,
 	};
 	return (
 		<ConfiguratorContext.Provider value={value}>
