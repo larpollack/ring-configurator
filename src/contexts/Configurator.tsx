@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode, useState } from 'react';
+import React, { createContext, useContext, ReactNode, useState } from 'react';
 
 export type ShapeOption = 'Round' | 'Oval' | 'Emerald' | 'Asscher';
 

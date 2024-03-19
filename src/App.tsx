@@ -1,3 +1,4 @@
+import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import Setting from './components/Setting';
 import PanelWrapper from './components/PanelWrapper';
