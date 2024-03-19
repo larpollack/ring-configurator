@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	useConfigurator,
 	ShapeOption,
@@ -24,9 +24,6 @@ const CustomizationPanel: React.FC = () => {
 
 	return (
 		<>
-			<div className='text-[#cdc7ff] ml-2 mb-4 text-3xl'>
-				Design Your Custom Ring
-			</div>
 			<div className='bg-violet-300/50 p-4 rounded-md shadow-xl shadow-black'>
 				<label>
 					Stone Shape:&nbsp;

@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import Setting from './components/Setting';
-import CustomizationPanel from './components/CustomizationPanel';
+import PanelWrapper from './components/PanelWrapper';
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 				<Setting />
 			</Canvas>
 			<div className='absolute top-4 left-4'>
-				<CustomizationPanel />
+				<PanelWrapper />
 			</div>
 		</>
 	);

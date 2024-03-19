@@ -6,9 +6,29 @@ import {
 	SpotLight,
 } from '@react-three/drei';
 import { Ring } from './Ring';
-import { Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 
+const isMobileScreen = () => window.innerWidth <= 768;
 const Setting = () => {
+	const [cameraPosition, setCameraPosition] = useState<
+		[number, number, number]
+	>([0, 4, 14]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (isMobileScreen()) {
+				setCameraPosition([0, 3, 7]);
+			} else {
+				setCameraPosition([0, 4, 14]);
+			}
+		};
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 	return (
 		<mesh>
 			<Stage environment='forest' intensity={1} castShadow={true}></Stage>
@@ -32,7 +52,7 @@ const Setting = () => {
 					mirror={0}
 				/>
 			</mesh>
-			<PerspectiveCamera makeDefault position={[0, 4, 14]} />
+			<PerspectiveCamera makeDefault position={cameraPosition} />
 			<OrbitControls
 				minAzimuthAngle={undefined}
 				maxAzimuthAngle={undefined}
