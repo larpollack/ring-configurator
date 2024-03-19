@@ -82,6 +82,7 @@ const ConfiguratorProvider: React.FC<ConfiguratorProviderProps> = ({
 	);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useConfigurator = (): ConfiguratorContextType => {
 	const context = useContext(ConfiguratorContext);
 	if (context === undefined) {

@@ -3,10 +3,9 @@ import {
 	OrbitControls,
 	PerspectiveCamera,
 	Stage,
-	SpotLight,
 } from '@react-three/drei';
 import { Ring } from './Ring';
-import React, { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 
 const isMobileScreen = () => window.innerWidth <= 768;
 const Setting = () => {

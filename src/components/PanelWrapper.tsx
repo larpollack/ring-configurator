@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CustomizationPanel from './CustomizationPanel';
 import { FiMenu, FiX } from 'react-icons/fi';
 

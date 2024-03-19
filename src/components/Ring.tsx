@@ -4,7 +4,6 @@ Command: npx gltfjsx@6.2.16 ring.gltf --types
 */
 
 import * as THREE from 'three';
-import React, { useRef } from 'react';
 import { useConfigurator } from '../contexts/Configurator';
 import { useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
@@ -172,10 +171,10 @@ type GLTFResult = GLTF & {
 	// animations: GLTFAction[]
 };
 
-type ContextType = Record<
-	string,
-	React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>
->;
+// type ContextType = Record<
+// 	string,
+// 	React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>
+// >;
 
 export function Ring(props: JSX.IntrinsicElements['group']) {
 	const { nodes, materials } = useGLTF('./models/ring.gltf') as GLTFResult;
