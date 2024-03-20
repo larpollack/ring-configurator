@@ -325,45 +325,57 @@ export function Ring(props: JSX.IntrinsicElements['group']) {
 								scale={-0.053}
 								visible={true}
 							/>
-							<mesh
-								geometry={nodes.Oval_stone_blue_rose_gold.geometry}
-								material={materials.diamond_blue}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_pink_rose_gold.geometry}
-								material={materials.diamond_pink}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_yellow_rose_gold.geometry}
-								material={materials.diamond_yellow}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_black_rose_gold.geometry}
-								material={materials.diamond_black}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_halo_band_rose_gold.geometry}
-								material={materials.rose_gold}
-								position={[0.014, 2.596, -0.005]}
-								scale={0.34}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_halo_stones_rose_gold.geometry}
-								material={materials.diamond_pure}
-								position={[-1.111, 3, -0.331]}
-								rotation={[Math.PI / 2, 0, 0]}
-								scale={[0.079, 0.048, 0.048]}
-								visible={true}
-							/>
+							{stoneColor === 'diamond_blue' && (
+								<mesh
+									geometry={nodes.Oval_stone_blue_rose_gold.geometry}
+									material={materials.diamond_blue}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_pink' && (
+								<mesh
+									geometry={nodes.Oval_stone_pink_rose_gold.geometry}
+									material={materials.diamond_pink}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_yellow' && (
+								<mesh
+									geometry={nodes.Oval_stone_yellow_rose_gold.geometry}
+									material={materials.diamond_yellow}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_black' && (
+								<mesh
+									geometry={nodes.Oval_stone_black_rose_gold.geometry}
+									material={materials.diamond_black}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{hasHalo && (
+								<>
+									<mesh
+										geometry={nodes.Oval_halo_band_rose_gold.geometry}
+										material={materials.rose_gold}
+										position={[0.014, 2.596, -0.005]}
+										scale={0.34}
+										visible={true}
+									/>
+									<mesh
+										geometry={nodes.Oval_halo_stones_rose_gold.geometry}
+										material={materials.diamond_pure}
+										position={[-1.111, 3, -0.331]}
+										rotation={[Math.PI / 2, 0, 0]}
+										scale={[0.079, 0.048, 0.048]}
+										visible={true}
+									/>
+								</>
+							)}
 						</>
 					)}
 					{bandColor === 'white_gold' && (
@@ -402,45 +414,57 @@ export function Ring(props: JSX.IntrinsicElements['group']) {
 								scale={0.442}
 								visible={true}
 							/>
-							<mesh
-								geometry={nodes.Oval_stone_yellow_white_gold.geometry}
-								material={materials.diamond_yellow}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_blue_white_gold.geometry}
-								material={materials.diamond_blue}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_pink_white_gold.geometry}
-								material={materials.diamond_pink}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_stone_black_white_gold.geometry}
-								material={materials.diamond_black}
-								position={[0.012, 2.777, -0.001]}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_halo_band_white_gold.geometry}
-								material={materials.white_gold}
-								position={[0.014, 2.596, -0.005]}
-								scale={0.34}
-								visible={true}
-							/>
-							<mesh
-								geometry={nodes.Oval_halo_stones_white_gold.geometry}
-								material={materials.diamond_pure}
-								position={[-1.111, 3, -0.331]}
-								rotation={[Math.PI / 2, 0, 0]}
-								scale={[0.079, 0.048, 0.048]}
-								visible={true}
-							/>
+							{stoneColor === 'diamond_yellow' && (
+								<mesh
+									geometry={nodes.Oval_stone_yellow_white_gold.geometry}
+									material={materials.diamond_yellow}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_blue' && (
+								<mesh
+									geometry={nodes.Oval_stone_blue_white_gold.geometry}
+									material={materials.diamond_blue}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_pink' && (
+								<mesh
+									geometry={nodes.Oval_stone_pink_white_gold.geometry}
+									material={materials.diamond_pink}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{stoneColor === 'diamond_black' && (
+								<mesh
+									geometry={nodes.Oval_stone_black_white_gold.geometry}
+									material={materials.diamond_black}
+									position={[0.012, 2.777, -0.001]}
+									visible={true}
+								/>
+							)}
+							{hasHalo && (
+								<>
+									<mesh
+										geometry={nodes.Oval_halo_band_white_gold.geometry}
+										material={materials.white_gold}
+										position={[0.014, 2.596, -0.005]}
+										scale={0.34}
+										visible={true}
+									/>
+									<mesh
+										geometry={nodes.Oval_halo_stones_white_gold.geometry}
+										material={materials.diamond_pure}
+										position={[-1.111, 3, -0.331]}
+										rotation={[Math.PI / 2, 0, 0]}
+										scale={[0.079, 0.048, 0.048]}
+										visible={true}
+									/>
+								</>
+							)}
 						</>
 					)}
 				</>
